@@ -1,34 +1,36 @@
-# What is moving and what is not
+# What is moved and what is not
 
-Kva __skal__ vi ta med oss til github? 
+## Being moved
 
-{{langs}}-katalogane (tastatura er allereie der):
+The following is moved from [our Subversion repository](https://gtsvn.uit.no/langtech/) to [github.com/giellalt](https://github.com/giellalt):
 
-* closed-langs -> privat
-* closedSA-langs -> privat
-* experiment-langs
-* external-langs
-* langs --> lang-sme (merkelapp: prod)
-* startup-langs
+The `*-langs` directories:
 
-Felleskatalogane {{giella-*}}:
+* `closed-langs` (will become private repos)
+* `closedSA-langs` (will become private repos)
+* `experiment-langs`
+* `external-langs`
+* `langs`
+* `startup-langs`
 
-* giella-core
-* giella-libs
-* giella-shared
-* giella-templates
+The `*-keyboards` directories have already been moved.
 
-Desse blir der dei er (modulo revisjonar). Innhaldet blir tilgjengeleg via $GTHOME (frå svn som tidlegare):
 
-* gt/script
-* gt/common?
+The shared `giella-*` directories:
 
-Kva skal vi __ikkje__ ta med oss til github? Resten av katalogane i $GTHOME
+* `giella-core`
+* `giella-libs` (perhaps not this one, it is a relict of our old build setup, and will be irrelevant in the future)
+* `giella-shared`
+* `giella-templates`
 
-# Things being discarded
+## NOT being moved
 
-* brukarar med ei testinnsjekking?
-* greiner hit og dit
-* tagga versjonar
+Essentially everything else in `$GTHOME` will be left in svn, at least for now. Most of these things are also specific to Tromsø, with the exception of `$GTHOME/words`. That one will be considered for a move to github at a later point in time.
+
+# Things being discarded in the move
+
+* Users with only a single or a few test commits
+* svn branches (they have been reviewed; since the svn repo will still be accessible, those interested in the branches and the history can access them there)
+* svn tags (they have also been reviewed, with the same conclusion as for branches)
 
 These are still available in the svn repo, if need be.
