@@ -15,4 +15,4 @@ See also:
 
 - [Infra Upgrade And Github Move](https://giellalt.uit.no/infra/InfraUpgradeAndGithub.html)
 - [project dadmin](https://github.com/divvun/project-dadmin) (command line tool to help administering multiple GitHub repositories)
-- [Apertium](https://github.com/apertium) already moved to [GitHub](https://github.com/), and has [a lot of valuable notes and scripts](https://github.com/apertium/apertium-on-github). Apertium has a structure quite similar to ours, and there should be a lot of valuable lessions to learn from
+- [Apertium](https://github.com/apertium) already moved to [GitHub](https://github.com/), and has [a lot of valuable notes and scripts](https://github.com/apertium/apertium-on-github). Apertium has a structure quite similar to ours, and there should be many valuable lessions to learn from
