@@ -49,7 +49,7 @@ tools/
 │   └── patternbased
 ├── mt
 │   ├── apertium
-│   ├── cgbased
+│   └── cgbased
 ├── shellscripts
 ├── spellcheckers
 │   ├── fstbased
