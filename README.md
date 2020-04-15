@@ -1,6 +1,7 @@
 # GiellaLT svn2git
 
-Documentation and planning for moving the GiellaLT language resources from svn to GitHub.
+Documentation and planning for moving the GiellaLT language resources from [svn]
+(https://gtsvn.uit.no/langtech) to GitHub.
 
 # Details
 
