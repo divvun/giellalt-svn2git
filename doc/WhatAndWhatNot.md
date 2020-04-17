@@ -47,6 +47,7 @@ They are the following:
 
 - est
 - esu
+- fin
 - smn
 - sms
 - zul
@@ -68,6 +69,16 @@ infra (directly to GitHub).
 
 The old empty framework is deleted, with the exception of `src/morphology/root.lexc`,
 which is moved to `$GTHOME/restlangs/` for future reference.
+
+### fin
+
+- in `langs` - a fork of [omorfi](https://github.com/flammie/omorfi)
+- in `experiment-langs` - essentially just to keep a copy of Fred Karlsson's
+  original CG1 Finnish Constraint Grammar file. The rest is tentative work, but
+  not substantial.
+
+The FINCG file is moved to `langs/fin/doc/`, the rest of `experiment-langs/fin/`
+is removed and not transferred to github.
 
 ### smn
 
