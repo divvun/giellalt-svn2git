@@ -91,10 +91,7 @@ whether it can be deleted.
 ### sms
 
 - in `langs` - this is the main development line
-- in `experiment-langs` - this is an experiment
-
-The person responsible for the experiment is contacted with a question of
-whether it can be deleted.
+- in `experiment-langs` - this was an experiment, and will be removed.
 
 ### zul
 
