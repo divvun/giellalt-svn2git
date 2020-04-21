@@ -58,7 +58,10 @@ In `langs/est/` and `experiment-langs/est/`.
 
 Two independent implementations of an Estonian analyser, and both should be kept. Their
 names should be something like `est-x-XXX`, where `XXX` is specific for each variant.
-The variant names are not yet decided.
+The variant names will be:
+
+- `lang-est-x-plamk` = old `langs/est/`
+- `lang-est-x-utee` = old `experiment-langs/est/`
 
 ### esu
 
@@ -77,8 +80,8 @@ which is moved to `$GTHOME/restlangs/` for future reference.
   original CG1 Finnish Constraint Grammar file. The rest is tentative work, but
   not substantial.
 
-The FINCG file is moved to `langs/fin/doc/`, the rest of `experiment-langs/fin/`
-is removed and not transferred to github.
+The FINCG file has been moved to `langs/fin/doc/`, and the rest of
+`experiment-langs/fin/` has been removed and will not be transferred to github.
 
 ### smn
 
@@ -91,7 +94,7 @@ whether it can be deleted.
 ### sms
 
 - in `langs` - this is the main development line
-- in `experiment-langs` - this was an experiment, and will be removed.
+- in `experiment-langs` - this was an experiment, and has been removed.
 
 ### zul
 
