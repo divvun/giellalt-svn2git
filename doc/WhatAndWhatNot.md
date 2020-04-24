@@ -86,10 +86,8 @@ The FINCG file has been moved to `langs/fin/doc/`, and the rest of
 ### smn
 
 - in `langs` - this is the main development line
-- in `experiment-langs` - this is an experiment with alternative two-level rules.
-
-The person responsible for the experiment is contacted with a question of
-whether it can be deleted.
+- in `experiment-langs/smn-ex/` - this was an experiment with alternative two-level
+  rules. Removed in accordance with the responsible person.
 
 ### sms
 
