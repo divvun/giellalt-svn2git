@@ -24,6 +24,8 @@ If cloned with submodules, everything will be in place, and nothing more needs t
 
 If cloned without submodules, running `./autogen.sh` will clone the required resources and make them available in the correct place.
 
+If we're using `git subtree` instead, everything will also be in place, and nothing more needs to be done.
+
 ### Checking out using svn
 
 The `svn` interface of GitHub does not give access to submodules. Instead the resources will be checked out by `./autogen.sh` and made available in the correct place.
@@ -38,10 +40,11 @@ See **One language, git** above. If the source code is fetched in other ways, it
 
 ## tarballs
 
-All include statements in Makefile.am files are processed before tarballs are made, which means that there is no pre `autoreconf` processing requirements. The tarballs can thus be built independently of the above concerns.
+All include statements in `Makefile.am` files are processed before tarballs are made, which means that there is no pre `autoreconf` processing requirements. The tarballs can thus be built independently of the above concerns.
 
 # Version checks
 
-* each langauge tied to a specific version of giella-core?
-* giella-core using a flat incrementing version number, no semantic versioning
-* configure.ac (and related files) check that the available version of both resources are the correct one
+* `giella-core` will switch to use a flat incrementing version number, instead of semantic versioning as is used now
+* `configure.ac` (and related files) check that the available version of both resources are the correct one, as usual
+
+All-encompassing updates to required versions can easily be done using the [dadmin tool](https://github.com/divvun/project-dadmin/).
