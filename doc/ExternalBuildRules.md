@@ -14,6 +14,14 @@ Using environment variables is not ideal, since we would have to rely on them al
 
 Both resources should available in a dir `deps/` in each language, so that the path to the build resources will always be: `$(top_srcdir)/deps/giella-core/am-shared/*`, and similar for `giella-shared`.
 
+## Submodule vs subtree
+
+Most operations seem easier using `git subtree`. The main issue for the GiellaLT use cases seems to be that with `git subtree` the subtree is always included, for all users. That does not go well for users working with many languages at the same time, where the desired behavior is that the subproject code is *NOT* cloned, but instead cloned as an entirely separate repo parallel to all languages. In this case the place of the submodule should be a symbolic link to the independent repo.
+
+`git submodule` on the other hand seems to allow this by opting *NOT* to clone submodules. This leaves the `deps/` subdir open for setting up symlinks instead.
+
+If the regular user is by default not cloning submodules, and instead relying on `./autogen.sh`, we can get the desired behavior for all users: they can cd into the `giella-shared` dir, make changes and commit + push (since it is a completely independent repo). And for CI and other build systems it is easy to enforce cloning of submodules, so that these read-only usages get all the code in one go.
+
 # Usage scenarios
 
 ## One language
@@ -26,14 +34,34 @@ If cloned without submodules, running `./autogen.sh` will clone the required res
 
 If we're using `git subtree` instead, everything will also be in place, and nothing more needs to be done.
 
+| Submodule           | Subtree                                            |
+| ------------------- | -------------------------------------------------- |
+| off by default      | always included                                    |
+| allows independent clone using `./autogen.sh` | won't work with `./autogen.sh` |
+| hard to commit/push | commits are transparent                            |
+| update separately   | updates automatically                              |
+
 ### Checking out using svn
 
 The `svn` interface of GitHub does not give access to submodules. Instead the resources will be checked out by `./autogen.sh` and made available in the correct place.
+
+| Submodule           | Subtree                                            |
+| ------------------- | -------------------------------------------------- |
+| does not work       | works transparently                                |
+| requires `./autogen.sh` | won't work with `./autogen.sh`                 |
+| hard to commit/push | commits are transparent                            |
+| update separately   | updates automatically                              |
 
 ## Multiple languages
 
 If many languages are cloned or checked out in parallel (and without the submodule feature of git), running `./autogen.sh` will make a simple check to detect this, and then clone/checkout the two resources parallel to all language repos (if not already available). It will then make a symlink from the expected location in `dest/` to the resources one dir level up.
 
+| Submodule           | Subtree                                            |
+| ------------------- | -------------------------------------------------- |
+| does not work       | works transparently                                |
+| requires `./autogen.sh` | won't work with `./autogen.sh`                 |
+| hard to commit/push | commits are transparent                            |
+| update separately   | updates automatically                              |
 ## CI
 
 See **One language, git** above. If the source code is fetched in other ways, it is the responsibility of the builder to make sure that it is available as expected at `autoreconf` time.
