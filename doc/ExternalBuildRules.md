@@ -1,16 +1,16 @@
 # External build rules
 
-To enforce true language independence for the core build rules, they should be moved out of each language dir (`am-shared/`) to `giella-core/am-shared`. There is also a separate repo (`giella-shared`) of shared language resources (language data such as digits, named or acronyms, or shared filter regexes), these should be treated the same way wrt building. To make automatic builds work from source check-out or clone, there are a number of things to consider.
+To enforce true language independence for the core build rules, they should be moved out of each language dir (`am-shared/`) to `giella-core/am-shared`. There is also a separate repo (`giella-shared`) of shared language resources (language data such as digits, names or acronyms, or shared filter regexes), these should be treated the same way wrt building. To make automatic builds work from source check-out or clone, there are a number of things to consider.
 
 # Problem
 
-`am-shared` is needed at `autoreconf` time, which requires that all its resources are available at a known and relatively local position. This makes sharing the resources among languages more tricky, since every language is its own repository in GitHub. Thus these resources are not automatically available.
+`am-shared` is needed at `autoreconf` time, which requires that all build resources are available at a known and relatively local position. This makes sharing the resources among languages more tricky, since every language is its own repository in GitHub. Thus these resources are not automatically available by just checking out the language repo, which means that the language tools can not be built.
 
-Using environment variables is also not ideal, since we would have to rely on them all the time, for all builds (given that the resources must be available for `autoreconf`).
+Using environment variables is not ideal, since we would have to rely on them all the time, for all builds (given that the resources must be available for `autoreconf`).
 
 # Basic idea
 
-> `giella-shared` & `giella-core` as submodules in each language. This can be overriden by `autogen.sh` for each language, see below.
+> `giella-shared` & `giella-core` as git submodules or subtrees in each language. This can be overriden by `autogen.sh` for each language, see below.
 
 Both resources should available in a dir `deps/` in each language, so that the path to the build resources will always be: `$(top_srcdir)/deps/giella-core/am-shared/*`, and similar for `giella-shared`.
 
