@@ -6,6 +6,8 @@ To enforce true language independence for the core build rules, they should be m
 
 `am-shared` is needed at `autoreconf` time, which requires that all its resources are available at a known and relatively local position. This makes sharing the resources among languages more tricky, since every language is its own repository in GitHub. Thus these resources are not automatically available.
 
+Using environment variables is also not ideal, since we would have to rely on them all the time, for all builds (given that the resources must be available for `autoreconf`).
+
 # Basic idea
 
 > `giella-shared` & `giella-core` as submodules in each language. This can be overriden by `autogen.sh` for each language, see below.
@@ -34,9 +36,12 @@ If many languages are cloned or checked out in parallel (and without the submodu
 
 See **One language, git** above. If the source code is fetched in other ways, it is the responsibility of the builder to make sure that it is available as expected at `autoreconf` time.
 
+## tarballs
+
+All include statements in Makefile.am files are processed before tarballs are made, which means that there is no pre `autoreconf` processing requirements. The tarballs can thus be built independently of the above concerns.
+
 # Version checks
 
 * each langauge tied to a specific version of giella-core?
 * giella-core using a flat incrementing version number, no semantic versioning
 * configure.ac (and related files) check that the available version of both resources are the correct one
-* 
