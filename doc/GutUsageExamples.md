@@ -136,3 +136,11 @@ Looks good, all new (Untracked) files/dirs are looking correct.
 
 3. commit all repos: `dadmin commit -o giellalt -r keyboard- -m "Convert repos to kbdgen 2 bundle structure."`
 1. push all commits upstream: `dadmin push -o giellalt -r keyboard- -b master`
+
+# Task 2: create a branch and push it upstreams
+
+```
+dadmin create branch -n test-subtree -o giellalttmp -r "(giella-|lang-)"
+```
+
+This will create the branch `test-subtree`, and push it to `remote origin`, for all repositories matching either `giella-` or `lang-`, for the organisation `giellalttmø`.
