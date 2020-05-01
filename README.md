@@ -22,3 +22,4 @@ See also:
 
 - [External build rules](doc/ExternalBuildRules.md)
 - [Dadmin/Gut usage examples](doc/GutUsageExamples.md)
+- [SVN notes](doc/SvnNotes.md)
