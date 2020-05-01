@@ -47,8 +47,8 @@ If we're using `git subtree` instead, everything will also be in place, and noth
 | Operation      | Submodule           | Subtree               | Script               |
 | -------------- | ------------------- | --------------------- | -------------------- |
 | checkout/clone | off by default      | always included       | separate repo        |
-| commit/push    | hard to do          | transparent           | separate repo        |
-| pull/update    | update sep., hard   | automatic/transparent | separate repo/action |
+| commit/push    | impossible->script  | transp., mixed history| separate repo        |
+| pull/update    | impossible->script  | transp., subpr. push hard | separate repo/action |
 | branching      | hard to do          | automatic/transparent | separate repo/action |
 
 ### Using svn
@@ -58,8 +58,8 @@ The `svn` interface of GitHub does not give access to submodules. Instead the re
 | Operation      | Submodule           | Subtree               | Script               |
 | -------------- | ------------------- | --------------------- | -------------------- |
 | checkout/clone | does not work       | transparent           | separate repo        |
-| commit/push    | impossible->script  | transparent           | separate repo        |
-| pull/update    | impossible->script  | automatic/transparent | separate repo/action |
+| commit/push    | impossible->script  | transp., mixed history| separate repo        |
+| pull/update    | impossible->script  | transp., subpr. push hard | separate repo/action |
 | branching      | hard to do          | automatic/transparent | separate repo/action |
 
 ## Multiple languages
@@ -95,6 +95,32 @@ All include statements in `Makefile.am` files are processed before tarballs are 
 | commit/push    | N/A         | N/A         | N/A         |
 | pull/update    | N/A         | N/A         | N/A         |
 | branching      | N/A         | N/A         | N/A         |
+
+# Summary: submodule vs subtree vs scripting
+
+## Submodules
+
+* too much hassle for people to get commits and pushes right
+* hard to keep tied to HEAD (explicit setting to newest revision all the time)
+* can be ok for `giella-core`, but won't work for `giella-shared`
+* thus disregarded, since we want the same solution for both
+
+## Subtrees
+
+* looks good on the surface
+* mixed history is not nice
+* pushing back to origin is hard
+* can be ok for `giella-core`, but won't work for `giella-shared`
+* thus disregarded, since we want the same solution for both
+
+## Script
+
+(ie ./autogen.sh in project/repo root)
+
+* all repos are separate
+* easy to commit and push to (both svn and git)
+* not mixing history
+* works for all except some CI stuff, which can be made to work in any case
 
 # Version checks
 
