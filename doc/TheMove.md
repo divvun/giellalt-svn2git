@@ -47,7 +47,7 @@ git svn clone https://gtsvn.uit.no/langtech/trunk/langs/sme --authors-file=svn2g
 Merge gtsme into lang-sme
 
 ```bash
-cd ../lang-sme
+cd lang-sme
 git remote add gtsme $HOME/repos/langtech_to_github/gtsme
 git checkout gtsme/master
 git checkout -b gtsme
