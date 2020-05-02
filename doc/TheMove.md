@@ -28,11 +28,10 @@ git svn clone https://gtsvn.uit.no/langtech/trunk  --authors-file=svn2git-author
 ```
 
 Copy the clone to gtsme, extract only gt/sme. By copying the clone,
-the langtech directory can work be used as the base extracting
-the other languages from gt/
+the langtech directory can be used as the base for extracting
+the other languages inside gt/
 
 ```bash
-cd ..
 rsync -avpp langtech/ gtsme
 cd gtsme
 git filter-branch --subdirectory-filter gt/sme HEAD -- --all
@@ -41,14 +40,15 @@ git filter-branch --subdirectory-filter gt/sme HEAD -- --all
 Clone langs/sme
 
 ```bash
-git svn clone https://gtsvn.uit.no/langtech/trunk/langs/sme lang-sme  --authors-file=svn2git-authors.txt langtech
+cd ..
+git svn clone https://gtsvn.uit.no/langtech/trunk/langs/sme --authors-file=svn2git-authors.txt lang-sme
 ```
 
 Merge gtsme into lang-sme
 
 ```bash
 cd ../lang-sme
-git remote add gtsme /home/boerre/repos/langtech_to_github/gtsme
+git remote add gtsme $HOME/repos/langtech_to_github/gtsme
 git checkout gtsme/master
 git checkout -b gtsme
 git checkout master
