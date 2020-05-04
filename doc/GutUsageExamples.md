@@ -144,3 +144,35 @@ dadmin create branch -n test-subtree -o giellalttmp -r "(giella-|lang-)"
 ```
 
 This will create the branch `test-subtree`, and push it to `remote origin`, for all repositories matching either `giella-` or `lang-`, for the organisation `giellalttmø`.
+
+# Task 3: manage topics, info
+
+## Set topics
+
+```
+dadmin topic set -o giellalttmp -r "lang-" -t finite-state-transducers constraint-grammar minority-language nlp prooging-tools language-resources
+```
+
+## Add more topics
+
+Add one more topic to a subset of the languages:
+
+```
+dadmin topic add -o giellalttmp -r "lang-(s|cr)" -t indigenous-languages
+```
+
+## Specify website
+
+```
+dadmin set info -o giellalttmp -r "(lang-|giella-)" -w https://giellalt.uit.no
+```
+
+**Note:** if you add a website to a private repo, it will become public. And conversely,
+if you make a repo with a website private, the website info will be removed. This is due
+to how GitHub operates, and beyond our control.
+
+# Task 4: make repo(s) public/private
+
+```
+dadmin make -o giellalttmp -r "(lang-|giella-)" private
+```
