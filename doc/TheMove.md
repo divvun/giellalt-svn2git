@@ -60,3 +60,28 @@ git filter-branch -f --prune-empty --index-filter 'git rm -rf --cached --ignore-
 git remote add git@github.com/giellalttmp/lang-sme
 git push -f origin master
 ```
+
+# Preparations
+
+* get updated GitHub email info from all
+* invite all relevant persons
+  * everyone with confirmed emails
+  * everyone committing during the last (two) year(s)?
+  * ignore the rest, they can ask for access later
+* create teams
+* add descriptions to all repos
+* make sure CI/CD is working for both keyboards and languages
+
+# Move steps
+
+We do one `langs` directory at a time. First is `$GTHOME/langs`, then `$GTHOME/experiment-langs`.
+
+1. Lock `$GTHOME/langs/` (no more commits possible, except for the next step)
+1. Remove `am-shared/` in all languages
+1. make one final update to git, using git svn
+1. push to GitHub
+1. create branch develop, make it the default, lock master
+1. move all from the **GiellaLTTmp** GitHub org to **GiellaLT**
+1. make all repos public
+1. add languages to teams
+1. announce the new checkout/clone url's, and reopen for edits
