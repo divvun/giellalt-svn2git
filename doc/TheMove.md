@@ -74,12 +74,13 @@ git push -f origin master
 * create teams
 * add descriptions to all repos
 * make sure CI/CD is working for both keyboards and languages
+* full history of `giella-core` & `giella-shared`
 
 # Move steps
 
 We do one `langs` directory at a time. First is `$GTHOME/langs`, then `$GTHOME/experiment-langs`. The actual move should take only a few hours, if not less.
 
-1. Lock `$GTHOME/langs/` (no more commits possible, except for the next step)
+1. email everyone about move time = last checkin time
 1. Remove `am-shared/` in all languages
 1. make one final update to git, using `git svn`
 1. push to GitHub
