@@ -84,7 +84,7 @@ We do one `langs` directory at a time. First is `$GTHOME/langs`, then `$GTHOME/e
 1. make one final update to git, using `git svn`
 1. push to GitHub
 1. create branch develop, make it the default, lock master
-1. move all from the **GiellaLTTmp** GitHub org to **GiellaLT**
+1. move all from the **GiellaLTTmp** GitHub org to **GiellaLT**; delete the GiellaLTTmp org
 1. make all repos public
 1. add languages to teams
 1. announce the new checkout/clone url's, and reopen for edits
