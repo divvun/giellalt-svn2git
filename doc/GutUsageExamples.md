@@ -2,7 +2,7 @@
 
 1. create a shell script `convert2bundle.sh` as follows:
 
-```
+```sh
 #!/bin/bash
 # Variables:
 convertordir=/Users/smo036/gitlangtech/kbdgen/support/convertor
@@ -139,7 +139,7 @@ Looks good, all new (Untracked) files/dirs are looking correct.
 
 # Task 2: create a branch and push it upstreams
 
-```
+```sh
 dadmin create branch -n test-subtree -o giellalttmp -r "(giella-|lang-)"
 ```
 
@@ -149,7 +149,7 @@ This will create the branch `test-subtree`, and push it to `remote origin`, for 
 
 ## Set topics
 
-```
+```sh
 dadmin topic set -o giellalttmp -r "lang-" -t finite-state-transducers constraint-grammar minority-language nlp prooging-tools language-resources
 ```
 
@@ -157,13 +157,13 @@ dadmin topic set -o giellalttmp -r "lang-" -t finite-state-transducers constrain
 
 Add one more topic to a subset of the languages:
 
-```
+```sh
 dadmin topic add -o giellalttmp -r "lang-(s|cr)" -t indigenous-languages
 ```
 
 ## Specify website
 
-```
+```sh
 dadmin set info -o giellalttmp -r "(lang-|giella-)" -w https://giellalt.uit.no
 ```
 
@@ -173,6 +173,14 @@ to how GitHub operates, and beyond our control.
 
 # Task 4: make repo(s) public/private
 
-```
+```sh
 dadmin make -o giellalttmp -r "(lang-|giella-)" private
 ```
+
+# Task 5: add description with dynamic content
+
+```sh
+dadmin set info -o giellalttmp -r 'lang-' --des-script /Users/smo036/svn2git/reponame2description.sh
+```
+
+**NB!** Make sure there is no trailing newline at the end, or it will fail. That is, use `printf`,  *not* `echo`.
