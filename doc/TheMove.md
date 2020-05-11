@@ -70,9 +70,9 @@ git push -f origin master
   	* ignore the rest, they can ask for access later
 * mirror the svn repo as individual language repos
   	* such that only a few more commits needs to be added before switching to git
-  	* make sure the `authors.txt` file is complete
+  	* make sure the `authors.txt` file is complete - DONE
 * create teams
-* add descriptions to all repos
+* add descriptions to all repos - DONE
 * make sure CI/CD is working for both keyboards and languages
 * full history of `giella-core` & `giella-shared`
 
