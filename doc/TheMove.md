@@ -63,10 +63,10 @@ git push -f origin master
 
 # Preparations
 
-* get updated GitHub email info from all
+* get updated GitHub email info from all - DONE to the extent it is received
 * invite all relevant persons
-  	* everyone with confirmed emails
-  	* everyone committing during the last (two) year(s)?
+  	* everyone with confirmed emails - DONE
+  	* everyone committing since 1.1.2016 (last four years, roughly) - DONE
   	* ignore the rest, they can ask for access later
 * mirror the svn repo as individual language repos
   	* such that only a few more commits needs to be added before switching to git
