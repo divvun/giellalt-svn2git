@@ -78,6 +78,8 @@ git push -f origin master
 * add descriptions to all repos - DONE
 * make sure CI/CD is working for both keyboards and languages - IN PROGRESS
 * full history of `giella-core`, `giella-shared` & `langs-templates/und/`
+* test lock master etc on the keyboard repos
+* identify the correct svn co url when the default branch is not `master`
 
 # Move steps
 
