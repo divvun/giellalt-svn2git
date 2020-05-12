@@ -17,8 +17,8 @@ else
 fi
 ```
 
-1. run script: `dadmin apply --script convert2bundle.sh -o giellalt -r keyboard`
-1. check verbose status of all repos: `dadmin status -v -o giellalt -r keyboard-`; result:
+1. run script: `gut apply --script convert2bundle.sh -o giellalt -r keyboard`
+1. check verbose status of all repos: `gut status -v -o giellalt -r keyboard-`; result:
 
 ```
 +---------------------------------------------------+
@@ -134,13 +134,13 @@ fi
 ```
 Looks good, all new (Untracked) files/dirs are looking correct.
 
-3. commit all repos: `dadmin commit -o giellalt -r keyboard- -m "Convert repos to kbdgen 2 bundle structure."`
-1. push all commits upstream: `dadmin push -o giellalt -r keyboard- -b master`
+3. commit all repos: `gut commit -o giellalt -r keyboard- -m "Convert repos to kbdgen 2 bundle structure."`
+1. push all commits upstream: `gut push -o giellalt -r keyboard- -b master`
 
 # Task 2: create a branch and push it upstreams
 
 ```sh
-dadmin create branch -n test-subtree -o giellalttmp -r "(giella-|lang-)"
+gut create branch -n test-subtree -o giellalttmp -r "(giella-|lang-)"
 ```
 
 This will create the branch `test-subtree`, and push it to `remote origin`, for all repositories matching either `giella-` or `lang-`, for the organisation `giellalttmø`.
@@ -150,7 +150,7 @@ This will create the branch `test-subtree`, and push it to `remote origin`, for 
 ## Set topics
 
 ```sh
-dadmin topic set -o giellalttmp -r "lang-" -t finite-state-transducers constraint-grammar minority-language nlp prooging-tools language-resources
+gut topic set -o giellalttmp -r "lang-" -t finite-state-transducers constraint-grammar minority-language nlp prooging-tools language-resources
 ```
 
 ## Add more topics
@@ -158,13 +158,13 @@ dadmin topic set -o giellalttmp -r "lang-" -t finite-state-transducers constrain
 Add one more topic to a subset of the languages:
 
 ```sh
-dadmin topic add -o giellalttmp -r "lang-(s|cr)" -t indigenous-languages
+gut topic add -o giellalttmp -r "lang-(s|cr)" -t indigenous-languages
 ```
 
 ## Specify website
 
 ```sh
-dadmin set info -o giellalttmp -r "(lang-|giella-)" -w https://giellalt.uit.no
+gut set info -o giellalttmp -r "(lang-|giella-)" -w https://giellalt.uit.no
 ```
 
 **Note:** if you add a website to a private repo, it will become public. And conversely,
@@ -174,13 +174,14 @@ to how GitHub operates, and beyond our control.
 # Task 4: make repo(s) public/private
 
 ```sh
-dadmin make -o giellalttmp -r "(lang-|giella-)" private
+gut make -o giellalttmp -r "(lang-|giella-)" private
 ```
 
 # Task 5: add description with dynamic content
 
 ```sh
-dadmin set info -o giellalttmp -r 'lang-' --des-script /Users/smo036/svn2git/reponame2description.sh
+gut set info -o giellalttmp -r 'lang-' --des-script /Users/smo036/svn2git/reponame2description.sh
 ```
 
 **NB!** Make sure there is no trailing newline at the end, or it will fail. That is, use `printf`,  *not* `echo`.
+
