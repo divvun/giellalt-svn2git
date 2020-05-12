@@ -185,3 +185,15 @@ gut set info -o giellalttmp -r 'lang-' --des-script /Users/smo036/svn2git/repona
 
 **NB!** Make sure there is no trailing newline at the end, or it will fail. That is, use `printf`,  *not* `echo`.
 
+# Task 6: create team, and populate with users
+
+```sh
+gut create team -o giellalt -t "Kainun kieli" \
+-d "Team for working with the kveen language." -m Trondtr snomos
+```
+
+# Task 7: add users to an existing team
+
+```sh
+gut add users -o giellalt -t giellaltstaff -u ilm024 leneantonsen
+```
