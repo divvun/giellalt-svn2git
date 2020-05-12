@@ -18,13 +18,15 @@ Basically, it boils down to the following:
 ## Example: sme
 
 ```bash
-cut -d'#' -f1 < $GTPRIV/admin/svn/svn2git-authors.txt > svn2git-authors.txt
+cut -d'#' -f1 < $GTPRIV/admin/svn/svn2git-authors.txt \
+	> svn2git-authors.txt
 ```
 
 Clone the complete repo, to be able to extract gt/sme
 
 ```bash
-git svn clone https://gtsvn.uit.no/langtech/trunk  --authors-file=svn2git-authors.txt langtech
+git svn clone https://gtsvn.uit.no/langtech/trunk \
+    --authors-file=svn2git-authors.txt langtech
 ```
 
 Copy the clone to gtsme, extract only gt/sme. By copying the clone,
@@ -41,7 +43,8 @@ Clone langs/sme
 
 ```bash
 cd ..
-git svn clone https://gtsvn.uit.no/langtech/trunk/langs/sme --authors-file=svn2git-authors.txt lang-sme
+git svn clone https://gtsvn.uit.no/langtech/trunk/langs/sme \
+	--authors-file=svn2git-authors.txt lang-sme
 ```
 
 Merge gtsme into lang-sme
