@@ -74,10 +74,10 @@ git push -f origin master
 * mirror the svn repo as individual language repos - DONE for `langs/`
   	* such that only a few more commits needs to be added before switching to git
   	* make sure the `authors.txt` file is complete - DONE
-* create teams
+* create teams - DONE
 * add descriptions to all repos - DONE
 * make sure CI/CD is working for both keyboards and languages - IN PROGRESS
-* full history of `giella-core`, `giella-shared` & `langs-templates/und/`
+* full history of `giella-core`, `giella-shared` & `langs-templates/und/` - DONE
 * test lock master etc on the keyboard repos
 * identify the correct svn co url when the default branch is not `master`
 
