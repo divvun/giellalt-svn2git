@@ -197,3 +197,9 @@ gut create team -o giellalt -t "Kainun kieli" \
 ```sh
 gut add users -o giellalt -t giellaltstaff -u ilm024 leneantonsen
 ```
+
+# Task 8: add webhook
+
+```sh
+gut hook create -m json -o giellalttmp -r 'lang-' -s /Users/smo036/svn2git/reponame2webhook.sh -e "*"
+```
