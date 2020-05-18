@@ -150,7 +150,7 @@ This will create the branch `test-subtree`, and push it to `remote origin`, for 
 ## Set topics
 
 ```sh
-gut topic set -o giellalttmp -r "lang-" -t finite-state-transducers constraint-grammar minority-language nlp prooging-tools language-resources
+gut topic set -o giellalttmp -r "lang-" -t finite-state-transducers constraint-grammar minority-language nlp proofing-tools language-resources
 ```
 
 ## Add more topics
