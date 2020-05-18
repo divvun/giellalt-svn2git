@@ -88,11 +88,14 @@ We do one `langs` directory at a time. First is `$GTHOME/langs`, then `$GTHOME/e
 1. email everyone about move time = last checkin time - DONE
 1. make one final update to git, using `git svn` - DONE
 1. push to GitHub
+1. add topics, description and url; **NB!** remember `giellalt-langs` topics!
 1. create branch develop, make it the default, lock master
-1. move all from the **GiellaLTTmp** GitHub org to **GiellaLT**; delete the GiellaLTTmp org
+1. add webhook for Zulip
 1. make all repos public
+1. move all from the **GiellaLTTmp** GitHub org to **GiellaLT**; delete the GiellaLTTmp org
 1. remove `langs` and `keyboards` from svn
 1. add languages to teams
+1. update 
 1. announce the new checkout/clone url's, and reopen for edits
-1. rewrite all Makefile.am files to include files from `giella-core/am-shared/`
+1. rewrite all Makefile.am files to include files from `giella-core/am-shared/` - DONE
 1. Remove `am-shared/` in all languages
