@@ -78,8 +78,8 @@ git push -f origin master
 * add descriptions to all repos - DONE
 * make sure CI/CD is working for both keyboards and languages - IN PROGRESS
 * full history of `giella-core`, `giella-shared` & `langs-templates/und/` - DONE
-* test lock master etc on the keyboard repos
-* identify the correct svn co url when the default branch is not `master`
+* test lock master etc on the keyboard repos - DONE
+* identify the correct svn co url when the default branch is not `master` - DONE
 
 # Move steps
 
@@ -87,15 +87,24 @@ We do one `langs` directory at a time. First is `$GTHOME/langs`, then `$GTHOME/e
 
 1. email everyone about move time = last checkin time - DONE
 1. make one final update to git, using `git svn` - DONE
-1. push to GitHub
-1. add topics, description and url; **NB!** remember `giellalt-langs` topics!
-1. create branch develop, make it the default, lock master
-1. add webhook for Zulip
-1. make all repos public
-1. move all from the **GiellaLTTmp** GitHub org to **GiellaLT**; delete the GiellaLTTmp org
-1. remove `langs` and `keyboards` from svn
-1. add languages to teams
-1. update 
-1. announce the new checkout/clone url's, and reopen for edits
+1. push to GitHub - DONE
+1. add topics, description and url; **NB!** remember `giellalt-langs` topics! - DONE
+1. create branch develop, make it the default, lock master - DONE
+1. add webhook for Zulip - DONE
+1. make all repos public - DONE
+1. move all from the **GiellaLTTmp** GitHub org to **GiellaLT** - DONE;
+   delete the GiellaLTTmp org
+1. remove `langs` and `keyboards` from svn - DONE
+1. add languages to teams - DONE
+1. update ???
+1. announce the new checkout/clone url's, and reopen for edits - DONE
 1. rewrite all Makefile.am files to include files from `giella-core/am-shared/` - DONE
-1. Remove `am-shared/` in all languages
+1. Remove `am-shared/` in all languages - DONE
+
+As of 19.5.2020, three language repos are still left in svn:
+
+- `external-langs/`
+- `closed-langs/`
+- `closedSA-langs/`
+
+All in all seven language repos. These will be converted over the next couple of weeks.
