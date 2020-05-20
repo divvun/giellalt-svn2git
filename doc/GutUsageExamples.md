@@ -206,10 +206,21 @@ gut hook create -m json -o giellalttmp -r 'lang-' -s /Users/smo036/svn2git/repon
 
 # Task 9: update template, propagate changes to all matching repos
 
+This is a multistep process. Do as follows:
+
 1. Make changes to the template as needed
 1. increase `rev_id` in `.gut/template.toml`
 1. commit the changes in the template
 1. `$ gut template apply -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und `
+    - review the changes (`gut status` is useful here); if everything is ok, then:
 1. `$ gut commit  -o giellalt -r ^lang- -m "Some commit message"`
 1. `$ gut template apply --continue -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und `
 1. `$ gut push -o giellalt -r ^lang- -b develop`
+
+The fourth step pushes the changes in the template to all matching repos,
+and the fifth one commits the changes.
+The sixth step updates the template reference point for each 
+language repo (the `.gut/delta.toml` file), and commits it.
+This is necessary for the templating system to know which template
+commit to calculate a delta from, for each language.
+The seventh and final step makes all changes available to others.
