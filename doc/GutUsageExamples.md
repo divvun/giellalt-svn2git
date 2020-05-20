@@ -203,3 +203,13 @@ gut add users -o giellalt -t giellaltstaff -u ilm024 leneantonsen
 ```sh
 gut hook create -m json -o giellalttmp -r 'lang-' -s /Users/smo036/svn2git/reponame2webhook.sh -e "*"
 ```
+
+# Task 9: update template, propagate changes to all matching repos
+
+1. Make changes to the template as needed
+1. increase `rev_id` in `.gut/template.toml`
+1. commit the changes in the template
+1. `$ gut template apply -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und `
+1. `$ gut commit  -o giellalt -r ^lang- -m "Some commit message"`
+1. `$ gut template apply --continue -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und `
+1. `$ gut push -o giellalt -r ^lang- -b develop`
