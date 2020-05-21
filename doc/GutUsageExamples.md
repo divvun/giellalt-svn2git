@@ -224,3 +224,15 @@ language repo (the `.gut/delta.toml` file), and commits it.
 This is necessary for the templating system to know which template
 commit to calculate a delta from, for each language.
 The seventh and final step makes all changes available to others.
+
+# Task 10: add a new language
+
+```sh
+gut template generate -t /Users/smo036/langtech/gut/giellalt/template-lang-und -d lang-XXX
+```
+
+Replace XXX with the code of the language you want. `lang-XXX` is really only the name of the new directory/repo, but the name of the repo should follow this pattern. The command is similar for keyboards, just with a different template.
+
+The command will prompt you for the essential data, like language code etc.
+
+This command can also be used to superimpose the GiellaLT dir and file structure on an existing repo, e.g. when importing an LT project into the GiellaLT infrastructure. Presently the command will fail, although the new structure has been added, so one can ignore the error, and proceed to verify and add&commit the changes.
