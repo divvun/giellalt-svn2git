@@ -101,8 +101,4 @@ We do one `langs` directory at a time. First is `$GTHOME/langs`, then `$GTHOME/e
 1. rewrite all Makefile.am files to include files from `giella-core/am-shared/` - DONE
 1. Remove `am-shared/` in all languages - DONE
 
-As of 26.5.2020, one language repo is still left in svn:
-
-- `external-langs/`
-
-All in all seven language repos. These will be converted over the next couple of weeks.
+As of 28.5.2020, all languages in svn have been moved to GitHub.
