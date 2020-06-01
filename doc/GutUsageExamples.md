@@ -137,13 +137,27 @@ Looks good, all new (Untracked) files/dirs are looking correct.
 3. commit all repos: `gut commit -o giellalt -r keyboard- -m "Convert repos to kbdgen 2 bundle structure."`
 1. push all commits upstream: `gut push -o giellalt -r keyboard- -b master`
 
-# Task 2: create a branch and push it upstreams
+# Task 2: create a branch & make it default
+
+## Create branch and push it upstreams
 
 ```sh
-gut create branch -n test-subtree -o giellalttmp -r "(giella-|lang-)"
+gut create branch --push -n develop -o giellalt -r lang-XXX
 ```
 
-This will create the branch `test-subtree`, and push it to `remote origin`, for all repositories matching either `giella-` or `lang-`, for the organisation `giellalttmø`.
+This will create the branch `develop`, and push it to `remote origin`, for all repositories matching either `lang-XXX`, for the organisation `giellalt`.
+
+## Set default branch
+
+```sh
+gut branch default -d develop -o giellalt -r lang-XXX
+```
+
+## Lock/protect branch
+
+```sh
+gut branch protect -p master -o giellalt -r lang-XXX
+```
 
 # Task 3: manage topics, info
 
@@ -167,10 +181,6 @@ gut topic add -o giellalttmp -r "lang-(s|cr)" -t indigenous-languages
 gut set info -o giellalttmp -r "(lang-|giella-)" -w https://giellalt.uit.no
 ```
 
-**Note:** if you add a website to a private repo, it will become public. And conversely,
-if you make a repo with a website private, the website info will be removed. This is due
-to how GitHub operates, and beyond our control.
-
 # Task 4: make repo(s) public/private
 
 ```sh
@@ -180,10 +190,10 @@ gut make -o giellalttmp -r "(lang-|giella-)" private
 # Task 5: add description with dynamic content
 
 ```sh
-gut set info -o giellalttmp -r 'lang-' --des-script /Users/smo036/svn2git/reponame2description.sh
+gut set info -o giellalt -r 'lang-XXX' --des-script giella-core/devtools/gut-scripts/reponame2description.sh
 ```
 
-**NB!** Make sure there is no trailing newline at the end, or it will fail. That is, use `printf`,  *not* `echo`.
+**NB!** Make sure there is no trailing newline at the end of the output of the script, or it will fail. That is, use `printf`,  *not* `echo`.
 
 # Task 6: create team, and populate with users
 
@@ -238,7 +248,7 @@ That will remove all changes to the matched repos, so that one can start over.
 # Task 10: add a new language
 
 ```sh
-gut template generate -t /Users/smo036/langtech/gut/giellalt/template-lang-und -d lang-XXX
+gut template generate -t template-lang-und -d lang-XXX
 ```
 
 Replace XXX with the code of the language you want. `lang-XXX` is really only the name of the new directory/repo, but the name of the repo should follow this pattern. The command is similar for keyboards, just with a different template.
@@ -246,3 +256,29 @@ Replace XXX with the code of the language you want. `lang-XXX` is really only th
 The command will prompt you for the essential data, like language code etc.
 
 This command can also be used to superimpose the GiellaLT dir and file structure on an existing repo, e.g. when importing an LT project into the GiellaLT infrastructure. Presently the command will fail, although the new structure has been added, so one can ignore the error, and proceed to verify and add&commit the changes.
+
+When the dir is created, and the content is checked, add it to the GiellaLT or as follows:
+
+```sh
+gut create repo -d . -o giellalt -r lang-XXX -p --clone
+```
+
+The `-d` option should point to the ***parent*** dir of the target — it makes it possible to add multiple language repos at a time, assuming they are all located within the same parent directory. The `--clone` option makes sure that the new repo(s) is(/are) directly cloned and made part of the local GiellaLT repos.
+The regex is presently required, but will probably be made optional.
+
+# Task 11: add external repo using `git subtree`
+
+There are a lot of FST descriptions of languages out there, one major such source is [Apertium](https://github.com/apertium). But most of these projects do not make spelling checkers or many other tools based on their morphological description. Since we have the infrastructure and the tools in place to make all languages work, it might be useful to just take those repos, and compile their fst within our infra, and from there make spellers, tokenisers, and a lot of other stuff. To do that, add a new language as follows:
+
+1. create a new language repo as shown above
+1. add the external source using `git subtree` as follows:
+```
+git subtree add --prefix src/fst/ext-Apertium-nno https://github.com/apertium/apertium-nno.git master --squash
+```
+1. Modify `src/fst/Makefile.am` as needed to make everything build
+
+When you later want to update the code from the external repository, do as follows:
+
+```sh
+git subtree pull --prefix src/fst/ext-Apertium-nno https://github.com/apertium/apertium-nno.git master --squash
+```
