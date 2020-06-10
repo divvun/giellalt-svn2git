@@ -257,14 +257,21 @@ The command will prompt you for the essential data, like language code etc.
 
 This command can also be used to superimpose the GiellaLT dir and file structure on an existing repo, e.g. when importing an LT project into the GiellaLT infrastructure. Presently the command will fail, although the new structure has been added, so one can ignore the error, and proceed to verify and add&commit the changes.
 
-When the dir is created, and the content is checked, add it to the GiellaLT or as follows:
+When the dir is created, and the content is checked, add it to the GiellaLT as follows:
 
 ```sh
 gut create repo -d . -o giellalt -r lang-XXX -p --clone
 ```
 
-The `-d` option should point to the ***parent*** dir of the target — it makes it possible to add multiple language repos at a time, assuming they are all located within the same parent directory. The `--clone` option makes sure that the new repo(s) is(/are) directly cloned and made part of the local GiellaLT repos.
+The `-d` option should point to the ***parent*** dir of the target — it makes it possible to add multiple language repos at a time, assuming they are all located within the same parent directory. The `--clone` option makes sure that the new repo/s is/are directly cloned and made part of the local GiellaLT repos.
 The regex is presently required, but will probably be made optional.
+
+After moving/pushing the new repo, remember to:
+
+- set a description
+- set a website
+- add topics
+- add webhook for Zulip
 
 # Task 11: add external repo using `git subtree`
 
