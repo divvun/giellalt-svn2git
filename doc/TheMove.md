@@ -96,7 +96,6 @@ We do one `langs` directory at a time. First is `$GTHOME/langs`, then `$GTHOME/e
    delete the GiellaLTTmp org
 1. remove `langs` and `keyboards` from svn - DONE
 1. add languages to teams - DONE
-1. update ???
 1. announce the new checkout/clone url's, and reopen for edits - DONE
 1. rewrite all Makefile.am files to include files from `giella-core/am-shared/` - DONE
 1. Remove `am-shared/` in all languages - DONE
