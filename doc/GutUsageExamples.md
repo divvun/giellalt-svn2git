@@ -245,6 +245,33 @@ gut template apply --abort -o giellalt ...
 
 That will remove all changes to the matched repos, so that one can start over.
 
+**NB3!** If you get push errors like the following:
+
+```sh
++---------------------------------+
+| Repo                     Status |
++=================================+
+| lang-aka                 Failed |
+| lang-amh                 Failed |
+| lang-apu                 Failed |
+```
+
+with this error message:
+
+```sh
++-----------------------------------------------------------------------------------------------------------+
+| Repo                     Error                                                                            |
++===========================================================================================================+
+| lang-aka                 src refspec 'refs/heads/master' does not match any existing object; class=Refere |
+|                          nce (4)                                                                          |
+| lang-amh                 src refspec 'refs/heads/master' does not match any existing object; class=Refere |
+|                          nce (4)                                                                          |
+| lang-apu                 src refspec 'refs/heads/master' does not match any existing object; class=Refere |
+|                          nce (4)                                                                          |
+```
+
+then you probably forgot to specify the branch, in which case it will default to `master`, which is locked, and it is thus not possible to push to. Hence the failed push and the error message.
+
 # Task 10: add a new language
 
 ```sh
