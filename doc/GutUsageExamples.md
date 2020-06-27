@@ -295,10 +295,11 @@ The regex is presently required, but will probably be made optional.
 
 After moving/pushing the new repo, remember to:
 
+- add webhook for Zulip
 - set a description
 - set a website
 - add topics
-- add webhook for Zulip
+- check write access, team association etc
 
 # Task 11: add external repo using `git subtree`
 
