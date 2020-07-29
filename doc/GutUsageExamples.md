@@ -227,10 +227,10 @@ This is a multistep process. Do as follows:
 1. `$ gut template apply --continue -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und `
 1. `$ gut push -o giellalt -r ^lang- -b develop`
 
-The fourth step pushes the changes in the template to all matching repos,
+The fourth step performs the changes from the template to all matching repos,
 and the fifth one commits the changes.
 The sixth step updates the template reference point for each 
-language repo (the `.gut/delta.toml` file), and commits it.
+language repo (the revision id in the `.gut/delta.toml` file), and commits it.
 This is necessary for the templating system to know which template
 commit to calculate a delta from, for each language.
 The seventh and final step makes all changes available to others.
