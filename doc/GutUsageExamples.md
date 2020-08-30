@@ -308,7 +308,8 @@ There are a lot of FST descriptions of languages out there, one major such sourc
 
 1. create a new language repo as shown above
 1. add the external source using `git subtree` as follows:
-```
+
+```sh
 git subtree add --prefix src/fst/ext-Apertium-nno https://github.com/apertium/apertium-nno.git master --squash
 ```
 1. Modify `src/fst/Makefile.am` as needed to make everything build
@@ -318,3 +319,13 @@ When you later want to update the code from the external repository, do as follo
 ```sh
 git subtree pull --prefix src/fst/ext-Apertium-nno https://github.com/apertium/apertium-nno.git master --squash
 ```
+
+# Task 12: Clone multiple repos in one go
+
+The very basic task of getting started:
+
+```sh
+gut clone -o giellalt -r ^lang
+```
+
+This will clone all repos in the `giellalt` org matching the regular expression `^lang` in the repo name.
