@@ -235,7 +235,8 @@ The sixth step updates the template reference point for each
 language repo (the revision id in the `.gut/delta.toml` file), and commits it.
 This is necessary for the templating system to know which template
 commit to calculate a delta from, for each language.
-The seventh and final step makes all changes available to others.
+Step seven is just to ensure everything is updated locally before the last step.
+The eigth and final step makes all changes available to others.
 
 **NB!** Please note that the repos need to be clean when running this command. Unclean/dirty repos will not be processed. Dirty repos are repos with untracked files, uncommitted changes etc.
 
