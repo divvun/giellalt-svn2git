@@ -331,3 +331,19 @@ gut clone -o giellalt -r ^lang
 ```
 
 This will clone all repos in the `giellalt` org matching the regular expression `^lang` in the repo name.
+
+# Task 13: Set team access permission
+
+NB! Requires owner permission by the user doing this!
+
+```sh
+gut set permission -o giellalt -p push -t GiellaLTstaff 
+```
+
+Result:
+
+- will set __write__ permission for all members of the GiellaLTstaff team, in the organisation GiellaLT
+- because we did not specify a regex to match repository names against, the command targets __all__
+  repos in the organisation.
+
+__NB!__ Repos not earlier assigned to the team __will silently be added!__
