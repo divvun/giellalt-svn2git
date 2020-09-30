@@ -228,6 +228,7 @@ This is a multistep process. Do as follows:
 1. `$ gut template apply --continue -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und `
 1. `$ gut pull -o giellalt -r ^lang-`
 1. `$ gut push -o giellalt -r ^lang- -b develop`
+1. `$ gut push -o giellalt -r template-lang-und`
 
 The fourth step performs the changes from the template to all matching repos,
 and the fifth one commits the changes.
