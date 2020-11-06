@@ -45,12 +45,15 @@ The criterias for the various levels are, in reverse order (obviously some of th
 
 * grammar/model/layout mostly complete
 * lexicon between 1k and 10k entries
+* rule of thumb: it can be built locally and used for something
 
 ## Beta ![Maturity: Production](https://img.shields.io/badge/Maturity-Beta-yellow.svg)
 
 * grammar/model/layout complete
 * lexicon has more than 10k entries
 * running text coverage above 80 %
+* CI/CD working for the tools being provided, entries in Divvun Manager with delivery to the nightly channel
+* rule of thumb: it can easily get from the nightly channel/Dev app/etc - it must be testable by the user community
 
 ## Production ![Maturity: Production](https://img.shields.io/badge/Maturity-Production-rightgreen.svg)
 
@@ -58,4 +61,5 @@ The criterias for the various levels are, in reverse order (obviously some of th
 * lexicon has more than 30k entries (but subject to realworld realities & limits)
 * running text coverage above 90 %
 * at least one contact person in the language community that is willing to or being payed to be a first line support person and language resource maintainer
-* CI/CD working for the tools being provided, entries in Divvun Manager, documentation, etc
+* CI/CD working for the tools being provided, entries in Divvun Manager, documentation, etc, with delivery to the stable channel
+* rule of thumb: it is available in the stable channel/default App/etc
