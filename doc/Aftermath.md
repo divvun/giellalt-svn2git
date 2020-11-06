@@ -11,7 +11,7 @@ To be fleshed out, but the following points are at least relevant:
 * make sure everything is working also for svn users
 	* DONE (at least svn ignore, everything else works as before)
 * define production languages - see below on maturity
-* transfer dictionaries to github - prefix `dict-`
+* transfer dictionaries to github - repo prefix `dict-`
 * possibly transfer other stuff to github:
 	* tools
 	* techdoc (`site-giellalt`?)
