@@ -20,7 +20,7 @@ To be fleshed out, but the following points are at least relevant:
 
 # Language model maturity classification
 
-We need to clearly communicate the maturity of a language code base. For this we could have four categories as follows:
+We need to clearly communicate the maturity of a language code base. For this we could have four categories as follows (+ unknown/undefined):
 
 1. Production - colour: green
 1. Beta - colour: yellow
@@ -33,6 +33,7 @@ These should be used as labels in the README for each language, and also in the 
 * ![Maturity: Production](https://img.shields.io/badge/Maturity-Beta-yellow.svg)
 * ![Maturity: Production](https://img.shields.io/badge/Maturity-Alpha-red.svg)
 * ![Maturity: Production](https://img.shields.io/badge/Maturity-Experiment-black.svg)
+* ![Maturity: Production](https://img.shields.io/badge/Maturity-Undefined-lightgrey.svg)
 
 The criterias for the various levels are, in reverse order (obviously some of these do not apply to keyboards):
 
