@@ -18,3 +18,44 @@ To be fleshed out, but the following points are at least relevant:
 	* the other sites, repo prefix `site-`?
 	* make the site build and publish on push/commit using github actions
 
+# Language model maturity classification
+
+We need to clearly communicate the maturity of a language code base. For this we could have four categories as follows:
+
+1. Production - colour: green
+1. Beta - colour: yellow
+1. Alpha - colour: red
+1. Experiment / student exercise - colour: black
+
+These should be used as labels in the README for each language, and also in the [registry](https://github.com/divvun/registry). The labels should look as follows:
+
+* ![Maturity: Production](https://img.shields.io/badge/Maturity-Production-brightgreen.svg)
+* ![Maturity: Production](https://img.shields.io/badge/Maturity-Beta-yellow.svg)
+* ![Maturity: Production](https://img.shields.io/badge/Maturity-Alpha-red.svg)
+* ![Maturity: Production](https://img.shields.io/badge/Maturity-Experiment-black.svg)
+
+The criterias for the various levels are, in reverse order (obviously some of these do not apply to keyboards):
+
+## Experiment ![Maturity: Production](https://img.shields.io/badge/Maturity-Experiment-black.svg)
+
+* fragmentary grammar/model/layout
+* less than 1k lexical entries
+
+## Alpha ![Maturity: Production](https://img.shields.io/badge/Maturity-Alpha-red.svg)
+
+* grammar/model/layout mostly complete
+* lexicon between 1k and 10k entries
+
+## Beta ![Maturity: Production](https://img.shields.io/badge/Maturity-Beta-yellow.svg)
+
+* grammar/model/layout complete
+* lexicon has more than 10k entries
+* running text coverage above 80 %
+
+## Production ![Maturity: Production](https://img.shields.io/badge/Maturity-Production-rightgreen.svg)
+
+* grammar/model/layout complete
+* lexicon has more than 30k entries (but subject to realworld realities & limits)
+* running text coverage above 90 %
+* at least one contact person in the language community that is willing to or being payed to be a first line support person and language resource maintainer
+* CI/CD working for the tools being provided, entries in Divvun Manager, documentation, etc
