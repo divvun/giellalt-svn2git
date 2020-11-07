@@ -63,4 +63,5 @@ The criterias for the various levels are, in reverse order (obviously some of th
 * running text coverage above 90 %
 * at least one contact person in the language community that is willing to or being payed to be a first line support person and language resource maintainer
 * CI/CD working for the tools being provided, entries in Divvun Manager, documentation, etc, with delivery to the stable channel
+* Release `1.0.0` or higher of either speller or analyser/`giella-XXX` package
 * rule of thumb: it is available in the stable channel/default App/etc
