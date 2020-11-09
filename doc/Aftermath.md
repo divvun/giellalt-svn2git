@@ -43,11 +43,13 @@ This category also covers student exercises (published with permission). The poi
 
 * fragmentary grammar/model/layout
 * less than 1k lexical entries
+* only available by building locally, may not build at all
 
 ## Alpha ![Maturity: Production](https://img.shields.io/badge/Maturity-Alpha-red.svg)
 
 * grammar/model/layout mostly complete
 * lexicon between 1k and 10k entries
+* only available for internal testing
 * rule of thumb: it can be built locally and used for something
 
 ## Beta ![Maturity: Production](https://img.shields.io/badge/Maturity-Beta-yellow.svg)
