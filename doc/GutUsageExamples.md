@@ -214,6 +214,21 @@ gut add users -o giellalt -t giellaltstaff -u ilm024 leneantonsen
 gut hook create -m json -o giellalttmp -r 'lang-' -s /Users/smo036/svn2git/reponame2webhook.sh -e "*"
 ```
 
+Based on experience, it is not advisable to send off all events, at least not if the recipient is IRC, Zulip and similar community tools. The following is a more restricted version that should provide a reasonably balance between staying up-to-date and not being spammed:
+
+```sh
+gut hook create -m json -o giellalt -r 'lang-smj' \
+-u 'https://giella.zulipchat.com/api/v1/external/github?api_key=SECRETKEY&stream=smj' \
+-e check_run code_scanning_alert commit_comment create delete deploy_key fork gollum \
+issue_comment issues label member milestone package ping project_card project_column \
+project public pull_request pull_request_review pull_request_review_comment push \
+release repository repository_import repository_vulnerability_alert secret_scanning_alert \
+star team_add watch
+```
+
+More information about the various webhook events can be found in the
+[GitHub Documentation](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/webhook-events-and-payloads).
+
 # Task 9: update template, propagate changes to all matching repos
 
 This is a multistep process. Do as follows:
