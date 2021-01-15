@@ -211,7 +211,9 @@ gut add users -o giellalt -t giellaltstaff -u ilm024 leneantonsen
 # Task 8: add webhook
 
 ```sh
-gut hook create -m json -o giellalttmp -r 'lang-' -s /Users/smo036/svn2git/reponame2webhook.sh -e "*"
+gut hook create -m json -o giellalttmp -r 'lang-' \
+-s /Users/smo036/langtech/gut/giellalt/giella-core/devtools/gut-scripts/reponame2webhook.sh \
+-e "*"
 ```
 
 Based on experience, it is not advisable to send off all events, at least not if the recipient is IRC, Zulip and similar community tools. The following is a more restricted version that should provide a reasonably balance between staying up-to-date and not being spammed:
