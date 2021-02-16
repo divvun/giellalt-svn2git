@@ -322,6 +322,9 @@ After moving/pushing the new repo, remember to:
 - set a website
 - add topics
 - check write access, team association etc
+- remember to update [the registry](https://github.com/divvun/registry) (for non-experimental repos)
+  or the
+  [overview of the experimental repos](https://github.com/divvun/registry/blob/master/Experimental.md).
 
 # Task 11: add external repo using `git subtree`
 
