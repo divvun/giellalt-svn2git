@@ -38,6 +38,10 @@ These should be used as labels in the README for each language, and also in the 
 
 The criterias for the various levels are, in reverse order (obviously some of these do not apply to keyboards):
 
+## Undefined ![Maturity: Undefined](https://img.shields.io/badge/Maturity-Undefined-lightgrey.svg)
+
+Used when the maturity is not definable, or has not yet been defined.
+
 ## Experiment ![Maturity: Production](https://img.shields.io/badge/Maturity-Experiment-black.svg)
 
 This category also covers student exercises (published with permission). The point of such exercises is not to make a working system, but to explore the possibilities for language technology. Such work can of course be extended and in the end result in a fully working, production tool.
