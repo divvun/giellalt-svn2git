@@ -26,6 +26,7 @@ We need to clearly communicate the maturity of a language code base. For this we
 1. Beta - colour: yellow
 1. Alpha - colour: red
 1. Experiment / student exercise - colour: black
+1. Undefined - colour: grey
 
 These should be used as labels in the README for each language, and also in the [registry](https://github.com/divvun/registry). The labels should look as follows:
 
