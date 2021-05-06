@@ -137,27 +137,13 @@ Looks good, all new (Untracked) files/dirs are looking correct.
 3. commit all repos: `gut commit -o giellalt -r keyboard- -m "Convert repos to kbdgen 2 bundle structure."`
 1. push all commits upstream: `gut push -o giellalt -r keyboard- -b master`
 
-# Task 2: create a branch & make it default
-
-## Create branch and push it upstreams
+# Task 2: create a branch
 
 ```sh
-gut create branch --push -n develop -o giellalt -r lang-XXX
+gut create branch --push -n tts-experiment -o giellalt -r lang-XXX
 ```
 
-This will create the branch `develop`, and push it to `remote origin`, for all repositories matching either `lang-XXX`, for the organisation `giellalt`.
-
-## Set default branch
-
-```sh
-gut branch default -d develop -o giellalt -r lang-XXX
-```
-
-## Lock/protect branch
-
-```sh
-gut branch protect -p master -o giellalt -r lang-XXX
-```
+This will create the branch `tts-experiment`, and push it to `remote origin`, for all repositories matching `lang-XXX`, for the organisation `giellalt`.
 
 # Task 3: manage topics, info
 
