@@ -266,32 +266,11 @@ gut template apply --abort -o giellalt ...
 
 That will remove all changes to the matched repos, so that one can start over.
 
-**NB3!** If you get push errors like the following:
+**NB3!** If you are adding new files in the `ignored` section in `.gut/template.toml`, you need to copy them manually - these files are not automatically added to all repositories. This can be considered a bug, but it is easily worked around by a command like the followoing:
 
 ```sh
-+---------------------------------+
-| Repo                     Status |
-+=================================+
-| lang-aka                 Failed |
-| lang-amh                 Failed |
-| lang-apu                 Failed |
+for i in lang-*; do cp -f template-lang-und/tools/tts/pipespec.xml.in $i/tools/tts/; done
 ```
-
-with this error message:
-
-```sh
-+-----------------------------------------------------------------------------------------------------------+
-| Repo                     Error                                                                            |
-+===========================================================================================================+
-| lang-aka                 src refspec 'refs/heads/master' does not match any existing object; class=Refere |
-|                          nce (4)                                                                          |
-| lang-amh                 src refspec 'refs/heads/master' does not match any existing object; class=Refere |
-|                          nce (4)                                                                          |
-| lang-apu                 src refspec 'refs/heads/master' does not match any existing object; class=Refere |
-|                          nce (4)                                                                          |
-```
-
-then you probably forgot to specify the branch, in which case it will default to `master`, which is locked, and it is thus not possible to push to. Hence the failed push and the error message.
 
 # Task 10: add a new language
 
