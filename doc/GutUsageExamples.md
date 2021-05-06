@@ -297,7 +297,6 @@ The regex is presently required, but will probably be made optional.
 
 After moving/pushing the new repo, remember to:
 
-- for lang repos, create develop branch, make it default, and lock master
 - add webhook for Zulip
 - set a description
 - set a website
