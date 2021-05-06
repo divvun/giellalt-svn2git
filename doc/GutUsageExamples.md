@@ -261,7 +261,7 @@ The eigth and final step makes all changes available to others.
 **NB2!** If you need to start over, run the above command with the `--abort` option, like this:
 
 ```sh
-gut template apply --abort -o giellalt ...
+gut template apply --abort -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und
 ```
 
 That will remove all changes to the matched repos, so that one can start over.
