@@ -150,7 +150,7 @@ This will create the branch `tts-experiment`, and push it to `remote origin`, fo
 ## Set topics
 
 ```sh
-gut topic set -o giellalttmp -r "lang-" -t finite-state-transducers constraint-grammar minority-language nlp proofing-tools language-resources
+gut topic set -o giellalt -r "lang-" -t finite-state-transducers constraint-grammar minority-language nlp proofing-tools language-resources
 ```
 
 ## Add more topics
@@ -158,19 +158,19 @@ gut topic set -o giellalttmp -r "lang-" -t finite-state-transducers constraint-g
 Add one more topic to a subset of the languages:
 
 ```sh
-gut topic add -o giellalttmp -r "lang-(s|cr)" -t indigenous-languages
+gut topic add -o giellalt -r "lang-(s|cr)" -t indigenous-languages
 ```
 
 ## Specify website
 
 ```sh
-gut set info -o giellalttmp -r "(lang-|giella-)" -w https://giellalt.uit.no
+gut set info -o giellalt -r "(lang-|giella-)" -w https://giellalt.uit.no
 ```
 
 # Task 4: make repo(s) public/private
 
 ```sh
-gut make -o giellalttmp -r "(lang-|giella-)" private
+gut make -o giellalt -r "(lang-|giella-)" private
 ```
 
 # Task 5: add description with dynamic content
@@ -197,7 +197,7 @@ gut add users -o giellalt -t giellaltstaff -u ilm024 leneantonsen
 # Task 8: add webhook
 
 ```sh
-gut hook create -m json -o giellalttmp -r 'lang-' \
+gut hook create -m json -o giellalt -r 'lang-' \
 -s /Users/smo036/langtech/gut/giellalt/giella-core/devtools/gut-scripts/reponame2webhook.sh \
 -e "*"
 ```
