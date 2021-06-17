@@ -6,11 +6,11 @@ To be fleshed out, but the following points are at least relevant:
     * see [this project](https://github.com/orgs/giellalt/projects/4)
 * transfer more to github:
     - dictionaries - repo prefix `dict-`
-    - tools/
-    - techdoc/
-    - priv/
-    - art/
     - corpora - repo prefix `corpus-`
+    - `tools/`   - in the [divvun](https://github.com/divvun/) org?
+    - `techdoc/` - as `site-giellalt.uit.no`, to be published on `giellalt.uit.no`
+    - `priv/`    - 
+    - `art/`     - 
     - …
 * possibly transfer other stuff to github:
     * tools
