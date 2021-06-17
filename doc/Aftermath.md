@@ -4,7 +4,14 @@ To be fleshed out, but the following points are at least relevant:
 
 * transfer bugzilla issues to github issues (only open ones, or old ones too?)
     * see [this project](https://github.com/orgs/giellalt/projects/4)
-* transfer dictionaries to github - repo prefix `dict-`
+* transfer more to github:
+    - dictionaries - repo prefix `dict-`
+    - tools/
+    - techdoc/
+    - priv/
+    - art/
+    - corpora - repo prefix `corpus-`
+    - …
 * possibly transfer other stuff to github:
     * tools
     * techdoc (`site-giellalt`?)
