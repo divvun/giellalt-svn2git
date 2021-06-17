@@ -11,6 +11,9 @@ To be fleshed out, but the following points are at least relevant:
     * the other sites, repo prefix `site-`?
     * make the site build and publish on push/commit using github actions
 
+After moving stuff to github, there might be a need to clean and remove files from the history.
+For that the [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/) is a great tool.
+
 ## DONE tasks
 
 * set up branches according to git-flow and our needs
