@@ -269,44 +269,49 @@ Replace XXX with the code of the language you want. `lang-XXX` is really only th
 The command will prompt you for the essential data, as follows:
 
 ```
-__UND__: here you fill in the 3-letter ISO code, e.g. pma.
-__UND2C__: if it exists, fill in the 2-letter ISO code , otherwise repeat the 3-letter one
-__UNDEFINED__: Gives the name of the language in English
-__LICENSE__: Gives the license type, e.g. LGPL-3.0
-__REPO__: gives the language directory name, e.g. lang-pma 
+__UND__: 3-letter ISO code, e.g. pma.
+__UND2C__: 2-letter ISO code if it exists, 3-letter otherwise
+__UNDEFINED__: Language name in English
+__LICENSE__: License type, e.g. LGPL-3.0
+__REPO__: language repository name, e.g. lang-pma 
 ```
 
 This command can also be used to superimpose the GiellaLT dir and file structure on an existing repo, e.g. when importing an LT project into the GiellaLT infrastructure. Presently the command will fail, although the new structure has been added, so one can ignore the error, and proceed to verify and add&commit the changes.
 
 Then do a few preparatory steps:
 
-```
-ch lang-XXX/
+```sh
+cd lang-XXX/
 chmod a+x autogen.sh # make autogen.sh executable
 git branch -m main #  gut creates master as the branch name, we use main nowadays
 cd ..
 ```
 
-When the dir is created, and the content is checked, add it to the GiellaLT as follows:
+When the dir is created, and the content is checked, add it to the GiellaLT
+GitHub organisation as follows:
 
+```sh
+gut create repo -d . -o giellalt -r lang-XXX -p
 ```
-sh gut create repo -d . -o giellalt -r lang-XXX -p --clone
-```
+
+(Use option `--clone` if the language repo is created in another dir than the
+existing language repositories.)
 
 The `-d` option should point to the ***parent*** dir of the target — it makes it possible to add multiple language repos at a time, assuming they are all located within the same parent directory. The `--clone` option makes sure that the new repo/s is/are directly cloned and made part of the local GiellaLT repos.
 The regex is presently required, but will probably be made optional.
 
 After moving/pushing the new repo, remember to:
 
-- add webhook for Zulip
-- set a description
-- set a website
-- add topics
-- check write access, team association etc
-- set up GH Pages
-- remember to update [the registry](https://github.com/divvun/registry) (for non-experimental repos)
-  or the
-  [overview of the experimental repos](https://github.com/divvun/registry/blob/master/Experimental.md).
+- add webhook for Zulip<br/>
+  To make sure that GitHub activities are logged in Zulip. Copy the webhook data
+  from another existing repo, and just change the channel (you probably need to
+  create the channel in Zulip first)
+- set a description — manually using the GH web interface, or using gut (see higher up on this page)
+- set a website — same as previous
+- [add topics](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics).
+  See other languages for examples. Remember to add maturity classification, language family and geographic location.
+- check [write access, team association etc](https://docs.github.com/en/get-started/learning-about-github/access-permissions-on-github)
+- set up [GH Pages](https://docs.github.com/en/pages/quickstart)
 
 # Task 11: add external repo using `git subtree`
 
