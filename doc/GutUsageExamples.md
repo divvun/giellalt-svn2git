@@ -306,12 +306,13 @@ After moving/pushing the new repo, remember to:
   To make sure that GitHub activities are logged in Zulip. Copy the webhook data
   from another existing repo, and just change the channel (you probably need to
   create the channel in Zulip first)
-- set a description — manually using the GH web interface, or using gut (see higher up on this page)
+- set a description — manually using the GitHub web interface, or using gut (see higher up on this page)
 - set a website — same as previous
 - [add topics](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/classifying-your-repository-with-topics).
   See other languages for examples. Remember to add maturity classification, language family and geographic location.
 - check [write access, team association etc](https://docs.github.com/en/get-started/learning-about-github/access-permissions-on-github)
-- set up [GH Pages](https://docs.github.com/en/pages/quickstart)
+- set up [GitHub pages](https://docs.github.com/en/pages/quickstart), or (preferably), build upon the ones in the `lang-XXX/docs/index.md` file. See [other language repository pages](https://giellalt.github.io/LanguageModels.html) for examples.
+
 
 # Task 11: add external repo using `git subtree`
 
