@@ -266,14 +266,22 @@ gut template generate -t template-lang-und -d lang-XXX
 
 Replace XXX with the code of the language you want. `lang-XXX` is really only the name of the new directory/repo, but the name of the repo should follow this pattern. The command is similar for keyboards, just with a different template.
 
-The command will prompt you for the essential data, like language code etc.
+The command will prompt you for the essential data, as follows:
+
+```
+__UND__: here you fill in the 3-letter ISO code, e.g. pma.
+__UND2C__: if it exists, fill in the 2-letter ISO code , otherwise repeat the 3-letter one
+__UNDEFINED__: Gives the name of the language in English
+__LICENSE__: Gives the license type, e.g. LGPL-3.0
+__REPO__: gives the language directory name, e.g. lang-pma 
+```
 
 This command can also be used to superimpose the GiellaLT dir and file structure on an existing repo, e.g. when importing an LT project into the GiellaLT infrastructure. Presently the command will fail, although the new structure has been added, so one can ignore the error, and proceed to verify and add&commit the changes.
 
 Then do a few preparatory steps:
 
-``sh
-lang-XXX/
+```
+ch lang-XXX/
 chmod a+x autogen.sh # make autogen.sh executable
 git branch -m main #  gut creates master as the branch name, we use main nowadays
 cd ..
@@ -281,8 +289,8 @@ cd ..
 
 When the dir is created, and the content is checked, add it to the GiellaLT as follows:
 
-```sh
-gut create repo -d . -o giellalt -r lang-XXX -p --clone
+```
+sh gut create repo -d . -o giellalt -r lang-XXX -p --clone
 ```
 
 The `-d` option should point to the ***parent*** dir of the target — it makes it possible to add multiple language repos at a time, assuming they are all located within the same parent directory. The `--clone` option makes sure that the new repo/s is/are directly cloned and made part of the local GiellaLT repos.
