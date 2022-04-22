@@ -225,10 +225,10 @@ This is a multistep process. Do as follows:
 1. Make changes to the template as needed
 1. increase `rev_id` in `.gut/template.toml`
 1. commit the changes in the template
-1. `$ gut template apply -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und `
+1. `$ gut template apply -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und`
     - review the changes (`gut status` is useful here); when everything is ok, then:
 1. `$ gut commit  -o giellalt -r ^lang- -m "[Template merge] Some commit message"`
-1. `$ gut template apply --continue -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und `
+1. `$ gut template apply --continue -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und`
 1. `$ gut pull -o giellalt -r ^lang-`
 1. `$ gut push -o giellalt -r ^lang-`
 1. `$ gut push -o giellalt -r template-lang-und`
