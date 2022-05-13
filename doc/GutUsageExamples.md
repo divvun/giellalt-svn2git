@@ -242,6 +242,8 @@ commit to calculate a delta from, for each language.
 Step seven is just to ensure everything is updated locally before the last step.
 The eigth and final step makes all changes available to others.
 
+It makes sense to run the stuff through `-r ^lang-zxx` first for testing. 
+
 **NB!** Please note that the repos need to be clean when running this command. Unclean/dirty repos will not be processed. Dirty repos are repos with untracked files, uncommitted changes etc.
 
 **NB2!** If you need to start over, run the above command with the `--abort` option, like this:
