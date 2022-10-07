@@ -319,6 +319,9 @@ After moving/pushing the new repo, remember to:
 - to make CI & CD work for keyboards:
     - ask the DevOps person to add a config for the new languages ([run some of this](https://github.com/divvun/taskcluster-config) to make TaskCluster pick up some secrets etc for the new languages)
     - aks DevOps to add entries for the new packages in Páhkat to get them to upload to the Páhkat repo, and thus make them available in Divvun Manager via the nightly channel
+- edit `manifest.toml.in`:
+    - add a proper product ID (ie a UUID string, using e.g. `uuidgen` or similar)
+    - run `./autogen.sh && configure`, and commit the changes in `manifest.toml`
 
 # Task 11: add external repo using `git subtree`
 
