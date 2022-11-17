@@ -227,7 +227,7 @@ This is a multistep process. Do as follows:
 1. commit the changes in the template
 1. `$ gut template apply -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und`
     - review the changes (`gut status` is useful here); when everything is ok, then:
-    - might not create new directories, use `rsync -av template-lang-und/path/to/newdir lang-zxx/path/to/` pay attention to /
+    - might not create new directories, use `rsync -av template-lang-und/path/to/newdir lang-zxx/path/to/`, pay attention to `/`
 1. `$ gut commit  -o giellalt -r ^lang- -m "[Template merge] Some commit message"`
 1. `$ gut template apply --continue -o giellalt -r ^lang- -t /Users/smo036/langtech/gut/giellalt/template-lang-und`
 1. `$ gut pull -o giellalt -r ^lang-`
