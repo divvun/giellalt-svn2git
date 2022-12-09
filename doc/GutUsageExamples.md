@@ -221,7 +221,10 @@ More information about the various webhook events can be found in the
 
 This is a multistep process. Do as follows:
 
-0. `$ gut pull -o giellalt -r ^template-lang-und`
+1. Make sure you have all language repos by cloning all: \
+  `$ gut clone -o giellalt -r '^lang-'` \
+  Languages you already have cloned will error out harmlessly
+1. `$ gut pull -o giellalt -r ^template-lang-und`
 1. Make changes to the template as needed
 1. increase `rev_id` in `.gut/template.toml`
 1. commit the changes in the template
