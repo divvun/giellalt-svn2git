@@ -221,10 +221,8 @@ More information about the various webhook events can be found in the
 
 This is a multistep process. Do as follows:
 
-0. Move to the `giellalt` directory:
-```sh
-cd $GUTROOTDIR/giellalt
-```
+0. Move to the `giellalt` directory: \
+`cd $GUTROOTDIR/giellalt`
 1. Make sure you have all language repos by cloning all: \
   `gut clone -o giellalt -r '^lang-'` \
   Languages you already have cloned will error out harmlessly
@@ -235,10 +233,9 @@ cd $GUTROOTDIR/giellalt
 1. `gut template apply -o giellalt -r ^lang- -t template-lang-und`
     - review the changes (`gut status -v -o giellalt -r ^lang-` is useful here); when everything is ok, then:
     - might not create new directories, use `rsync -av template-lang-und/path/to/newdir lang-zxx/path/to/`, pay attention to `/`
-    - **NB!** If you need to start over, run the above command with the `--abort` option, like this:
-      ```
-      gut template apply --abort -o giellalt -r ^lang- -t template-lang-und
-      ```
+    - **NB!** If you need to start over (erase all changes, and merge from template again),
+      run the above command with the `--abort` option, like this: \
+      `gut template apply --abort -o giellalt -r ^lang- -t template-lang-und`
       That will remove all changes to the matched repos, so that one can start over.
 1. `gut commit  -o giellalt -r ^lang- -m "[Template merge] Some commit message"`
 1. `gut template apply --continue -o giellalt -r ^lang- -t template-lang-und`
