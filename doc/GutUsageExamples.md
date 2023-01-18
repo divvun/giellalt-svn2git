@@ -235,7 +235,7 @@ This is a multistep process. Do as follows:
     - might not create new directories, use `rsync -av template-lang-und/path/to/newdir lang-zxx/path/to/`, pay attention to `/`
     - **NB!** If you need to start over (erase all changes, and merge from template again),
       run the above command with the `--abort` option, like this: \
-      `gut template apply --abort -o giellalt -r ^lang- -t template-lang-und`
+      `gut template apply --abort -o giellalt -r ^lang- -t template-lang-und` \
       That will remove all changes to the matched repos, so that one can start over.
 1. `gut commit  -o giellalt -r ^lang- -m "[Template merge] Some commit message"`
 1. `gut template apply --continue -o giellalt -r ^lang- -t template-lang-und`
