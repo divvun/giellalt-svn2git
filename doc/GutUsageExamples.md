@@ -267,7 +267,7 @@ for i in lang-*; do cp -f template-lang-und/tools/tts/pipespec.xml.in $i/tools/t
 
 # Task 10: add a new language
 
-Description moved to the [regular infra maintenance page](https://giellalt.github.io/infra/infraremake/HowToAddANewLanguage.html).
+Description moved to the [regular infra maintenance page](https://giellalt.github.io/infra/HowToAddANewLanguage.html).
 
 # Task 11: add external repo using `git subtree`
 
