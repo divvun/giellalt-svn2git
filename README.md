@@ -21,5 +21,5 @@ See also:
 ## Project notes & documents
 
 - [External build rules](doc/ExternalBuildRules.md)
-- [Gut usage examples](doc/GutUsageExamples.md)
+- [Gut usage examples](doc/https://giellalt.uit.no/infra/GutUsageExamples.html)
 - [SVN notes](doc/SvnNotes.md)
